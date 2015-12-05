@@ -1,0 +1,26 @@
+doctype html
+html(lang='en')
+    head
+        title Sniper Game
+        link(rel="stylesheet", href='./dest/css/all.min.css')
+        script(src='./node_modules/peerjs/dist/peer.min.js')
+        script(src='./node_modules/jquery/dist/jquery.min.js')
+
+    body
+        div#main
+            div#menu
+                //-choose yout role  .role
+                button.menu-role#beconn beConnect
+                button.menu-role#connto connect to others
+                //-show your ID or go back .beconn
+                span.menu-beconn#yourID
+                button.menu-beconn.back#back back
+                //-connect to another or go back .connto
+                span.menu-connto you can add your friend's ID to connect
+                input.menu-connto#anotherID
+                button.menu-connto.back back
+
+        duv#gameWindows
+            h1 game
+
+        script(src='./dest/js/all.min.js')

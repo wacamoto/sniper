@@ -1,0 +1,35 @@
+#main{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    max-width: 1100px;
+    height: 70vh;
+    margin: auto;
+    background-color: #ccc;
+}
+
+#menu{
+    width: 300px;
+    padding: 50px;
+    margin: auto;
+    background-color: #bbb;
+    text-align: center;
+
+    button, input{
+        width: 100%;
+        padding: 5px;
+        border: 2px solid black;
+        border-radius: 8px;
+        margin: 5px auto;
+        box-sizing: border-box;
+        text-align: center;
+        font-size: 1.3em;
+        background-color: #fff;
+    }
+
+    span{
+        margin: 5px;
+        font-size: 1.3em;
+    }
+
+}

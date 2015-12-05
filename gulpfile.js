@@ -21,7 +21,7 @@ gulp.task('minifyCSS', function() {
 gulp.task('gulp-uglify', function() {
     gulp.src('./src/js/*.js')
         .pipe(concat('all.js'))
-        .pipe(uglify())
+        //.pipe(uglify())
         .pipe(rename(function(path) {
             path.basename += ".min";
             path.extname = ".js";
@@ -38,7 +38,7 @@ gulp.task('jade', function() {
 gulp.task('watch', function() {
     gulp.watch('./src/scss/*.scss', ['minifyCSS']);
     gulp.watch('./src/js/*.js', ['gulp-uglify']);
-    gulp.watch('./twig/*.jade', ['jade']);
+    gulp.watch('./jade/*.jade', ['jade']);
 })
 
 gulp.task('default', ['watch', 'jade', 'minifyCSS', 'gulp-uglify'])
