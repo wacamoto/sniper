@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "jquery": "^2.1.4",
-    "peerjs": "^0.3.14"
+    "peerjs": "^0.3.14",
+    "snapsvg": "^0.4.0"
   }
 }
