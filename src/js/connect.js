@@ -5,14 +5,14 @@ var conn;
 
 
 function init() {
-    //generate your ID number
+    // generate your ID number  0 ~ 999999
     your_peer_id = Math.floor(Math.random()*1000000).toString();
     console.log('your ID number: ' + your_peer_id);
     
-    //show your ID number
-    $('#yourID').text('share this number to your frined ' + your_peer_id);
+    // show your ID number
+    $('#yourID').text(your_peer_id);
     
-    //input another ID number keypress "enter" to request connect 
+    // input another ID number keypress "enter" to send request connect 
     $('#anotherID').keypress(function(e) {
         code = e.keyCode ? e.keyCode : e.which;
         if(code == 13) {
@@ -22,7 +22,7 @@ function init() {
         }
     });
 
-    //peerAPI key ->> ravoxvbzqf2sm7vi
+    // peerAPI key ->> ravoxvbzqf2sm7vi
     peer = new Peer(your_peer_id, {key:'ravoxvbzqf2sm7vi'});
     
     peer.on('connection', function(conn) {
@@ -34,11 +34,11 @@ function init() {
 }
 
 function connect() {
-    //connect another id
+    // connect another id
     console.log('connect to: ' + another_peer_id);
     conn = peer.connect(another_peer_id);
     
-    //setting events
+    // setting events
     conn.on('open', function(){
         conn.send('{"event":"connectReq","id":' + your_peer_id + '}');
     });

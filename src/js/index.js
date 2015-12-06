@@ -11,6 +11,7 @@ $(document).ready(function() {
     $('#connto').on('click', function() {
         $('.menu-beconn, .menu-connto, .menu-role').hide();
         $('.menu-connto').show();
+        $('#anotherID').focus();
     });
 
     $('.back').on('click', function() {

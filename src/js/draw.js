@@ -1,2 +1,3 @@
 s = Snap('#gameWindows');
-var bigCircle = s.circle(150, 150, 100);
+
+var t = s.text(50, 50, "GAME")

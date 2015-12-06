@@ -4,6 +4,7 @@ var jade = require('gulp-jade');
 var concat = require('gulp-concat');
 var minifyCSS = require('gulp-minify-css');
 var uglify = require('gulp-uglify');
+var copy = require('gulp-copy');
 var rename = require("gulp-rename");
 
 gulp.task('minifyCSS', function() {
@@ -35,10 +36,15 @@ gulp.task('jade', function() {
     .pipe(gulp.dest('./'))
 })
 
+gulp.task('copy', function() {
+    gulp.src('./src/images/*')
+        .pipe(gulp.dest('./dest/images'))
+})
+
 gulp.task('watch', function() {
     gulp.watch('./src/scss/*.scss', ['minifyCSS']);
     gulp.watch('./src/js/*.js', ['gulp-uglify']);
     gulp.watch('./jade/*.jade', ['jade']);
 })
 
-gulp.task('default', ['watch', 'jade', 'minifyCSS', 'gulp-uglify'])
+gulp.task('default', ['watch', 'jade', 'minifyCSS', 'gulp-uglify', 'copy'])
